@@ -102,7 +102,7 @@ public class BasicComponent
 
 	protected Set<BareJID>      admins = new ConcurrentSkipListSet<BareJID>();
 	protected Set<String>       trusted = new ConcurrentSkipListSet<String>();
-	private ScriptEngineManager scriptEngineManager     = null;
+	protected ScriptEngineManager scriptEngineManager     = null;
 	private String              scriptsBaseDir          = null;
 	private String              scriptsCompDir          = null;
 	private ServiceEntity       serviceEntity           = null;

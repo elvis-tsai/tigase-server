@@ -37,13 +37,7 @@ import java.util.Queue;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.script.Bindings;
-import javax.script.Compilable;
-import javax.script.CompiledScript;
-import javax.script.ScriptContext;
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
+import javax.script.*;
 
 //~--- classes ----------------------------------------------------------------
 
@@ -150,7 +144,7 @@ public class Script extends AbstractScriptCommand {
 			Object res = "";
 
 			binds.put("result", res);
-			context = scriptEngine.getContext();
+			context = new SimpleScriptContext(); //scriptEngine.getContext(); returns global context!
 			context.setBindings(binds, ScriptContext.ENGINE_SCOPE);
 			writer = new StringWriter();
 			context.setErrorWriter(writer);
